@@ -5,28 +5,28 @@ import {Directive, ElementRef, HostListener} from '@angular/core';
 })
 export class ColorDirective {
 
-  constructor(private paragrah: ElementRef) { }
+  constructor(private _paragrah: ElementRef) { }
 
   @HostListener('window:keyup', ['$event']) windowClick($event) {
     switch ($event.key) {
       case 'ArrowUp':
-        this.changeColor('red');
+        this._changeColor('red');
         break;
       case 'ArrowRight':
-        this.changeColor('yellow');
+        this._changeColor('yellow');
         break;
       case 'ArrowDown':
-        this.changeColor('green');
+        this._changeColor('green');
         break;
       case 'ArrowLeft':
-        this.changeColor('blue');
+        this._changeColor('blue');
         break;
       default:
         return;
     }
   }
 
-  private changeColor(color: string): void {
-    this.paragrah.nativeElement.style.color = color;
+  private _changeColor(color: string): void {
+    this._paragrah.nativeElement.style.color = color;
   }
 }
